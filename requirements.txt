@@ -1,0 +1,5 @@
+sounddevice
+numpy
+scipy
+SpeechRecognition
+googletrans==4.0.2
