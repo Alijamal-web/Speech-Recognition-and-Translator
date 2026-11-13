@@ -1,3 +1,5 @@
+
+
 # Speech Recognition and Translator
 
 ## About the Project
@@ -64,6 +66,8 @@ Through this project, I practised:
 ## Project Demonstration
 
 Here is a short video demonstrating how the project works:
+
+https://github.com/user-attachments/assets/7514f77b-2fc4-4fa2-b4dd-c1c076b8e2ae
 
 [Add your demonstration video here]
 
