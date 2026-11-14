@@ -10,7 +10,7 @@ def trans_recording(lang):
     duration = 10  # секунды записи
     sample_rate = 44100
     
-    print("Говори...")
+    print("Speak...")
     recording = sd.rec(
         int(duration * sample_rate),
         samplerate=sample_rate,
@@ -20,7 +20,7 @@ def trans_recording(lang):
     sd.wait()
     wav.write("output.wav", sample_rate, recording)
     
-    print("Запись завершена, теперь распознаём...")
+    print("Record completed, now recognize...")
     recognizer = sr.Recognizer()
     
     with sr.AudioFile("output.wav") as source:
@@ -29,7 +29,7 @@ def trans_recording(lang):
     try:
         text = recognizer.recognize_google(audio, language=lang)
     except sr.UnknownValueError:
-        text = "Не удалось распознать речь."
+        text = "Speech could not be recognized."
     except sr.RequestError as e:
         text = f"Ошибка сервиса: {e}"
     
@@ -43,11 +43,11 @@ async def translate(text, lang):
 
 
 
-lang = input("Введите код языка для перевода (например, 'en' — английский, 'es' — испанский): ")
+lang = input("Enter the language code for translation (e.g. 'ru' - Russian, 'es' - Spanish):")
 
 
-recognized_text = trans_recording('ru-RU')
-print("Распознанный текст:", recognized_text)
+recognized_text = trans_recording('en-EN')
+print("recognized text:", recognized_text)
 
 translated_text = asyncio.run(translate(recognized_text, lang))
-print("Перевод:", translated_text)
+print("Translation:", translated_text)
